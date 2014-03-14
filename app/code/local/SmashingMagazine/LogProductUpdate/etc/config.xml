@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <SmashingMagazine_LogProductUpdate>
+            <version>0.0.1</version>
+        </SmashingMagazine_LogProductUpdate>
+    </modules>
+    <global>
+        <models>
+            <smashingmagazine_logproductupdate>
+                <class>SmashingMagazine_LogProductUpdate_Model</class>
+            </smashingmagazine_logproductupdate>
+        </models>
+        <events>
+            <catalog_product_save_after>
+                <observers>
+                    <smashingmagazine_logproductupdate>
+                        <class>smashingmagazine_logproductupdate/observer</class>
+                        <method>logUpdate</method>
+                        <type>singleton</type>
+                    </smashingmagazine_logproductupdate>
+                </observers>
+            </catalog_product_save_after>
+        </events>
+    </global>
+</config>
